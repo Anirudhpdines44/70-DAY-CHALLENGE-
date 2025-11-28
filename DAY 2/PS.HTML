@@ -1,0 +1,171 @@
+<!-- The `<!DOCTYPE html>` declaration defines that this is an HTML5 document. -->
+<!DOCTYPE html>
+<!-- The `<html>` element is the root element of an HTML page. `lang="en"` specifies the language of the document. -->
+<html lang="en">
+<head>
+    <!-- `<meta charset="UTF-8">` specifies the character encoding. It supports almost all characters and symbols. -->
+    <meta charset="UTF-8">
+    <!-- `<meta name="viewport">` is crucial for responsive design. It ensures the website scales correctly on all devices, from phones to desktops. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The `<title>` element specifies the title of the page, which is shown in the browser's tab. -->
+    <title>The Hindu - India's National Newspaper</title>
+    <!-- The `<link>` element links the HTML document to an external stylesheet (`style.css`), where we will define all of our visual styles. -->
+    <link rel="stylesheet" href="PS.CSS">
+</head>
+<!-- The `<body>` element contains all the visible content of the webpage, such as headings, paragraphs, images, and links. -->
+<body>
+
+    <!-- The `<header>` element is a container for introductory content or a set of navigational links. -->
+    <header>
+        <!-- The `<div class="header-top">` container holds the logo and user actions. We will use Flexbox to align these elements. -->
+        <div class="header-top">
+            <!-- A `<div class="logo">` for the newspaper's official logo. -->
+            <div class="logo">
+                <!-- The `<a>` tag makes the logo a clickable link that points to the homepage. `href="#"` is a placeholder. -->
+                <a href="#">
+                    <!-- The `<img>` tag displays the official logo. `src` is the image path, and `alt` is for accessibility. -->
+                    <img src="https://www.thehindu.com/theme/images/th-online/logo.png" alt="The Hindu Logo" class="official-logo">
+                </a>
+            </div>
+            
+            <!-- This container holds the search bar, user profile, and the subscribe button. -->
+            <div class="user-actions">
+                <!-- A `<form>` element for the search bar, which will be submitted to find content. -->
+                <form class="search-bar">
+                    <!-- The `<input>` tag creates the search text field. `placeholder` gives a hint to the user. -->
+                    <input type="text" placeholder="Search...">
+                    <!-- The `<button>` tag creates a clickable button to submit the search form. -->
+                    <button type="submit">Search</button>
+                </form>
+
+                <!-- The `<div class="user-profile">` is a container for the user's photo and name. -->
+                <div class="user-profile">
+                    <!-- The `<img>` tag is for the profile picture. `via.placeholder.com` is a handy service for placeholder images. -->
+                    <img src="PROFILE IMAGE.jpg" alt="User Profile Photo" class="profile-photo">
+                    <!-- A `<span>` is an inline container used to style the user's name. -->
+                    <span class="user-name">ANIRUDH</span>
+                </div>
+                
+                <!-- The `<button>` tag for the subscription call to action. -->
+                <button class="subscribe-btn">SUBSCRIBE</button>
+            </div>
+        </div>
+
+        <!-- The `<nav>` element contains the main navigation links for the website. -->
+        <nav class="main-nav">
+            <!-- The `<ul>` tag defines an unordered list, which is the standard way to create a navigation menu. -->
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">NATIONAL</a></li>
+                <li><a href="#">INTERNATIONAL</a></li>
+                <li><a href="#">BUSINESS</a></li>
+                <li><a href="#">SPORTS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- The `<main>` element represents the main content of the document. -->
+    <main>
+        <!-- A `<div class="main-container">` is a wrapper for all the main content, helping to center it on the page. -->
+        <div class="main-container">
+            <!-- This `<div class="main-content">` is for the main articles and news feeds on the left. -->
+            <div class="main-content">
+                <!-- This section is for the featured article, typically the most important news of the day. -->
+                <section class="featured-article">
+                    <!-- `<h2>` defines a secondary heading for the article title. -->
+                    <h2>India to become third-largest economy by 2027, says report</h2>
+                    <!-- The `<img>` tag displays the main image for the featured article. -->
+                    <img src="/images/m1.webp" alt="Featured Article Image" class="featured-img">
+                    <!-- A `<p>` tag for a short summary or excerpt of the article. -->
+                    <p>A new report projects that India will surpass Germany and Japan to become the world's third-largest economy by 2027...</p>
+                    <!-- A link to read the full article. -->
+                    <a href="#" class="read-more">Read More »</a>
+                </section>
+
+                <!-- This section is for a grid of other recent articles. -->
+                <section class="article-grid">
+                    <!-- Each `<article>` element represents a self-contained piece of content, like a blog post or news story. -->
+                    <article class="article-card">
+                        <!-- An `<img>` tag for the article's thumbnail image. -->
+                        <img src="/images/m2.webp" alt="Article Thumbnail 1">
+                        <!-- `<h3>` for the article's title. -->
+                        <h3>Government launches new health initiative</h3>
+                        <!-- A `<p>` for the article's summary. -->
+                        <p>The new program aims to provide free medical checkups for all citizens over the age of 60...</p>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="/images/m3.webp" alt="Article Thumbnail 2">
+                        <h3>Tech giants face new regulations</h3>
+                        <p>Regulatory bodies are proposing stricter laws to control data privacy and user consent in the digital age...</p>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="/images/m4.webp" alt="Article Thumbnail 3">
+                        <h3>Sports: National team wins championship</h3>
+                        <p>In a thrilling final, the national team clinched the title after a tense penalty shootout...</p>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="/images/m5.jpg" alt="Article Thumbnail 4">
+                        <h3>International: Peace talks show progress</h3>
+                        <p>Leaders from two nations have met to discuss a new peace treaty after years of conflict...</p>
+                    </article>
+                </section>
+            </div>
+
+            <!-- This `<aside>` element is for content that is tangentially related to the main content, like a sidebar. -->
+            <aside class="sidebar">
+                <!-- A section for trending news stories. -->
+                <div class="trending-news">
+                    <!-- `<h3>` for the sidebar section title. -->
+                    <h3>TRENDING NEWS</h3>
+                    <!-- An unordered list of trending stories. -->
+                    <ul>
+                        <li><a href="#">Inflation rates see a slight decrease</a></li>
+                        <li><a href="#">New space mission to explore Mars</a></li>
+                        <li><a href="#">Celebrity chef opens new restaurant</a></li>
+                        <li><a href="#">Latest fashion trends for the summer</a></li>
+                    </ul>
+                </div>
+                <!-- A simple placeholder for an advertisement. -->
+                <div class="ad-placeholder">
+                    <span>Advertisement</span>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- The `<footer>` element represents a footer for the whole page. -->
+    <footer>
+        <!-- A `<div class="footer-container">` to center the footer content. -->
+        <div class="footer-container">
+            <!-- A `<div class="footer-section">` for quick links. -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <!-- Another section for social media links. -->
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+            <!-- The final section for copyright information. -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Hindu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
