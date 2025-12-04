@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Post Clone (Dark Theme)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 🎨 CSS Styling for Dark Theme Instagram Post */
+        :root {
+            --bg-dark: #121212;
+            --card-dark: #262626;
+            --text-light: #f5f5f5;
+            --text-secondary: #a8a8a8;
+            --insta-red: #ed4956;
+            --border-color: #363636;
+            --icon-size: 24px;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--text-light);
+        }
+
+        /* Post Card Container */
+        .instagram-post {
+            width: 100%;
+            max-width: 470px; /* Standard Instagram post width */
+            border: 1px solid var(--border-color);
+            background-color: var(--card-dark);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+        }
+
+        /* 1. Header */
+        .post-header {
+            display: flex;
+            align-items: center;
+            padding: 14px 16px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .profile-pic {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 12px;
+            border: 2px solid var(--card-dark); /* For the subtle white ring effect */
+        }
+
+        .username {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-light);
+            margin-right: 4px;
+        }
+
+        .location {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+            display: block;
+        }
+
+        .options-icon {
+            font-size: 18px;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        /* 2. Image/Content */
+        .post-content {
+            width: 100%;
+            cursor: pointer;
+            position: relative; /* Needed for the like animation */
+        }
+
+        .post-image {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1/1; /* Typically square */
+            object-fit: cover;
+        }
+        
+        /* Hidden big heart for double-tap animation */
+        .big-heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: var(--text-light);
+            font-size: 80px;
+            opacity: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .big-heart.show {
+            opacity: 0.9;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* 3. Footer/Actions */
+        .post-footer {
+            padding: 4px 16px 16px 16px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 16px;
+        }
+
+        .action-group i {
+            font-size: var(--icon-size);
+            cursor: pointer;
+            color: var(--text-light);
+            transition: transform 0.1s;
+        }
+
+        .action-group i:active, .save-icon:active {
+            transform: scale(0.9);
+        }
+
+        /* Like Icon specific styling */
+        .like-icon.liked {
+            color: var(--insta-red);
+            animation: bounce 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27);
+        }
+        
+        @keyframes bounce {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .save-icon {
+            font-size: var(--icon-size);
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* 4. Details */
+        .details {
+            padding-top: 4px;
+        }
+
+        .likes {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: var(--text-light);
+        }
+
+        .caption-text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .caption-text .username {
+            margin-right: 6px;
+        }
+
+        .hashtag, .mention {
+            color: #4db8ff; /* A typical blue for links/mentions in dark mode */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .view-comments {
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .verified-badge {
+            color: #3897f0;
+            font-size: 12px;
+            margin-left: 2px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <article class="instagram-post">
+        <header class="post-header">
+            <div class="user-info">
+                <img src="./PIC MINE.jpg" alt="User Profile" class="profile-pic">
+                <div>
+                    <span class="username">Anirudh P Dines</span>
+                    <i class="fas fa-check-circle verified-badge"></i>
+                    <span class="location">Kerala,India</span>
+                </div>
+            </div>
+            <i class="fas fa-ellipsis-h options-icon"></i>
+        </header>
+
+        <div class="post-content">
+            <img src="./thumb-1920-186582.jpg" alt="Post" class="post-image">
+            <i class="fas fa-heart big-heart"></i> </div>
+
+        <footer class="post-footer">
+            <div class="actions">
+                <div class="action-group">
+                    <i class="far fa-heart like-icon" data-liked="false"></i>
+                    <i class="far fa-comment"></i>
+                    <i class="far fa-paper-plane"></i>
+                </div>
+                <i class="far fa-bookmark save-icon"></i>
+            </div>
+            
+            <div class="details">
+                <p class="likes"><span class="likes-count">6,867</span> likes</p>
+                <p class="caption-text">
+                    <span class="username">Anirudh P Dines</span>
+                    Enhance your Instagram Post with, UI Mockup Psd Templates 
+                    <a href="#" class="mention">@instagram</a> 
+                    <a href="#" class="hashtag">#templates</a>
+                </p>
+                <p class="view-comments">View all 42 comments</p>
+            </div>
+        </footer>
+    </article>
+
+    <script>
+        // 💻 JavaScript Interactivity
+        const likeButton = document.querySelector('.like-icon');
+        const postContent = document.querySelector('.post-content');
+        const bigHeart = document.querySelector('.big-heart');
+        const likesCountElement = document.querySelector('.likes-count');
+
+        let currentLikes = 6867; // Initial likes
+        let isLiked = false;
+
+        // Function to handle the like/unlike logic
+        function toggleLike(triggerType) {
+            isLiked = !isLiked;
+            
+            if (isLiked) {
+                // LIKE
+                likeButton.classList.remove('far'); // Outline heart
+                likeButton.classList.add('fas', 'liked'); // Filled red heart
+                currentLikes++;
+
+                // Show the big heart animation for double-tap
+                if (triggerType === 'double-tap') {
+                    bigHeart.classList.add('show');
+                    setTimeout(() => {
+                        bigHeart.classList.remove('show');
+                    }, 800);
+                }
+            } else {
+                // UNLIKE
+                likeButton.classList.remove('fas', 'liked');
+                likeButton.classList.add('far'); // Outline heart
+                currentLikes--;
+            }
+            
+            // Update the display text (basic number format)
+            likesCountElement.textContent = currentLikes.toLocaleString('en-US');
+        }
+
+        // 1. Click on the action bar heart icon
+        likeButton.addEventListener('click', () => {
+            toggleLike('icon-click');
+        });
+
+        // 2. Double-click on the image for quick liking
+        postContent.addEventListener('dblclick', (e) => {
+            if (!isLiked) { // Only quick-like if not already liked
+                toggleLike('double-tap');
+            }
+        });
+        
+    </script>
+</body>
+</html>
