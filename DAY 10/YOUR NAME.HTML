@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anime Movie Cards</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 40px;
+  background: #0b0b0f;
+  font-family: Poppins, sans-serif;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.card {
+  width: 250px;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .4s;
+}
+
+.card:hover img {
+  filter: brightness(40%);
+  transform: scale(1.1);
+}
+
+/* CONTENT PANEL */
+.content {
+  position: absolute;
+  bottom: -200px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  transition: .4s ease;
+}
+
+.card:hover .content {
+  bottom: 0;
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.details {
+  font-size: 13px;
+  opacity: .8;
+  margin: 5px 0 10px 0;
+}
+
+.desc {
+  font-size: 12px;
+  opacity: .9;
+}
+
+.icons {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.icons i {
+  margin-right: 10px;
+  color: #fff;
+  opacity: .8;
+  transition: .3s;
+}
+
+.icons i:hover {
+  opacity: 1;
+}
+</style>
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- YOUR NAME -->
+  <div class="card">
+    <img src="./YOUR NAME.jpg">
+    <div class="content">
+      <h2>Your Name</h2>
+      <div class="details">⭐ 8.4/10 | 2016 | 1h 52m</div>
+      <div class="desc">Two teenagers mysteriously swap bodies and form a beautiful bond across time.</div>
+      <div class="icons">
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-bookmark"></i>
+        <i class="fa-solid fa-share"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- DORORO -->
+  <div class="card">
+    <img src="./DORORO.webp">
+    <div class="content">
+      <h2>Dororo</h2>
+      <div class="details">⭐ 8.2/10 | 2019 | 24 eps</div>
+      <div class="desc">A ronin and a young thief travel together to reclaim the stolen parts of his body.</div>
+      <div class="icons">
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-bookmark"></i>
+        <i class="fa-solid fa-share"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ONE PIECE -->
+  <div class="card">
+    <img src="./ONE PIECE.jpg">
+    <div class="content">
+      <h2>One Piece</h2>
+      <div class="details">⭐ 9.0/10 | 1999 | 1000+ eps</div>
+      <div class="desc">Luffy and his pirate crew adventure across the seas in search of the ultimate treasure.</div>
+      <div class="icons">
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-bookmark"></i>
+        <i class="fa-solid fa-share"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLACK CLOVER -->
+  <div class="card">
+    <img src="./BLACK CLOVER.webp">
+    <div class="content">
+      <h2>Black Clover</h2>
+      <div class="details">⭐ 8.4/10 | 2017 | 170 eps</div>
+      <div class="desc">Asta, a boy born without magic, strives to become the Wizard King against all odds.</div>
+      <div class="icons">
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-bookmark"></i>
+        <i class="fa-solid fa-share"></i>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
